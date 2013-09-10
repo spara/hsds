@@ -26,6 +26,7 @@ entities are an organization or agency, a program or service, and a site or loca
 | phone.csv | yes | phone numbers, hours, and types |
 | fax.csv | no | fax numbers |
 | email.csv | no | email addresses |
+| urls.csv | no | web address |
 | keyword.csv | yes | key words for categorization |
 | service_area.csv | yes | area where service is available |
 | accessibility.csv | no | accessibility options available |
@@ -84,6 +85,7 @@ JSON has two boolean values, true and false.
 | HSD Name  | Descriptive Name | Data Type | Required |
 |:----------|:-----------------|:----------|:---------|
 | name     | name             | string    | yes      |
+| organization_id | organization id | string | yes |
 | funding_sources  | funding sources | array | no |
 | urls | urls | array | no |
 | contacts | contacts | object | no |
@@ -96,35 +98,30 @@ JSON has two boolean values, true and false.
 
 | HSD Name  | Descriptive Name | Data Type | Required |
 |:----------|:-----------------|:----------|:---------|
+| organization_id | organization id | string | yes |
+| location_id | location id | string | yes |
 | name      | name | string | yes |
 | description | description | string | yes |
 | short_desc | short description | string | no |
 | street_address | street address | object | no |
 | mail_address | mail address | object | no |
-| street | street | string | no |
-| city | city | string | no |
-| state | state | string | no |
-| postal_code | postal code | string | no |
 | hours | hours of operation | string | no |
 | transportation | transportation | string | no |
 | accessibility | accessibility | array | no |
 | languages | languages | array | no | 
 | ask_for | ask for | array | no |
 | contacts | contact | object | no |
-| contact_name | contact name | string | no |
-| contact_title | contact title | string | no |
 | emails | emails | array | no |
 | faxes | faxes | array | no |
 | phones | phones | array | no |
-| number | phone number | string | no |
-| phone_hours | phone hours | string | no |
-| phone_type | phone type | string | no |
 
 
 ### Services
 
 | HSD Name  | Descriptive Name | Data Type | Required |
 |:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| service_id | service id | string | yes |
 | audience | audience | string | yes |
 | eligibility | eligibility | string | yes |
 | fees | fees | string | yes |
@@ -133,3 +130,67 @@ JSON has two boolean values, true and false.
 | keywords | keywords | array | no |
 | wait | wait time | string | no |
 
+### Address
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| type | type | string | yes |
+| street | street | string | no |
+| city | city | string | no |
+| state | state | string | no |
+| postal_code | postal code | string | no |
+
+### Contact
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| contact_name | contact name | string | no |
+| contact_title | contact title | string | no |
+
+### Phone
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| number | phone number | string | no |
+| phone_hours | phone hours | string | no |
+| phone_type | phone type | string | no |
+
+
+### Fax
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| number | phone number | string | no |
+
+### Email
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| email | email | string | no |
+
+### URL
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| organization_id | organization id | string | yes |
+| url | url | string | no |
+
+### Keyword
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| service_id | service id | string | yes |
+| keyword | keyword | string | no |
+
+### Accessibility
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| service_id | service id | string | yes |
+| accessibility | accessibility | string | no |
+
+
+### Ask_for
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| location_id | location id | string | yes |
+| ask_for | ask for | string | no |
+
+# Extension
