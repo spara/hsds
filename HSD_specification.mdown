@@ -1,0 +1,120 @@
+# Human Services Data Specification
+
+This specification defines a minimum set of data elements for a human services data specification.
+
+# Term Definitions
+
+* Field required - The field column must be included in your feed, and a value must be provided for each record. Some required fields permit an empty string as a value. To enter an empty string, just omit any text between the commas for that field. Note that 0 is interpreted as "a string of value 0", and is not an empty string. Please see the field definition for details.
+
+* Field optional - The field column may be omitted from your feed. If you choose to include an optional column, each record in your feed must have a value for that column. You may include an empty string as a value for records that do not have values for the column. Some optional fields permit an empty string as a value. To enter an empty string, just omit any text between the commas for that field. Note that 0 is interpreted as "a string of value 0", and is not an empty string.
+
+# Data Models
+
+Both standards have an underlying data model that defines the major entities of
+human/civic services data and the relationship between these entities. The basic
+entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more programs and programs can have one or more locations.
+
+# Files
+
+| File  | Required | Defines |
+|:------|:---------:|:--------|
+| organization.csv | yes | organization that provides human services |
+| location.csv | yes | locations that provide human services |
+| service.csv | yes | human services provided |
+| address.csv | yes | location and mailing addresses |
+| contact.csv | no | contact persons and phone numbers |
+| phone.csv | yes | phone numbers, hours, and types |
+| fax.csv | no | fax numbers |
+| email.csv | no | email addresses |
+| keyword.csv | yes | key words for categorization |
+| service_area.csv | yes | area where service is available |
+| accessibility.csv | no | accessibility options available |
+| ask_for.csv | yes | person responsible for contact |
+
+
+# File Requirements
+
+Defines the format and contents of files.
+
+* Data is saved in a comma-delimited file, string elements must be enclosed by double quotes
+* The first line of each file must contain field names. Each subsection of the Field Definitions section corresponds to one of the files and lists the field names you may use in that file.
+* Field names are case sensitive
+* Field values may not contain tabs, carriage returns or new lines
+*Field values that contain quotation marks or commas must be enclosed within quotation marks. In addition, each quotation mark in the field value must be preceded with a quotation mark. This is consistent with the manner in which Microsoft Excel outputs comma-delimited (CSV) files. For more information on the CSV file format, see http://tools.ietf.org/html/rfc4180.
+	* The following example demonstrates how a field value would appear in a comma-delimited file:
+	* Original field value: Contains "quotes", commas and text
+	* Field value in CSV file: "Contains ""quotes"", commas and text"
+* Field values must not contain HTML tags, comments or escape sequences.
+* Remove any extra spaces between fields or field names.
+* Each line must end with a CRLF or LF linebreak character.
+* Files should be encoded in UTF-8 to support all Unicode characters.
+
+# Data Types
+Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null !["Data types"](http://json.org/value.gif "Data Types")
+
+A string is a sequence of zero or more characters wrapped in quotes with backslash escapement. !["String"](http://json.org/string.gif "String")
+
+A number can be represented as integer, real, or floating point. JSON does not support octal or hex because it is minimal. It does not have values for NaN or Infinity because it does not. Numbers are not quoted. !["Number"](http://json.org/number.gif "Number")
+
+JSON has two boolean values, true and false.
+
+A JSON object is an unordered collection of key/value pairs wrapped in curly braces. The keys are strings and the values are any of the JSON types. A colon separates the keys from the values, and comma separates the pairs. !["Object"](http://json.org/object.gif "Object")
+
+The JSON array is an ordered collection of values separated by commas wrapped in square brackets. !["Array"](http://json.org/array.gif "Array")
+
+# Field Definitions
+
+## Organizations 
+
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| name     | name             | string    | yes      |
+| funding_sources  | funding sources | array | no |
+| urls | urls | array | no |
+| contacts | contacts | object | no |
+| contact_name | contact name | string | no |
+| contact_title | contact title | string | no |
+
+
+
+### Locations
+
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| name      | name | string | yes |
+| description | description | string | yes |
+| short_desc | short description | string | no |
+| street_address | street address | object | no |
+| mail_address | mail address | object | no |
+| street | street | string | no |
+| city | city | string | no |
+| state | state | string | no |
+| postal_code | postal code | string | no |
+| hours | hours of operation | string | no |
+| transportation | transportation | string | no |
+| accessibility | accessibility | array | no |
+| languages | languages | array | no | 
+| ask_for | ask for | array | no |
+| contacts | contact | object | no |
+| contact_name | contact name | string | no |
+| contact_title | contact title | string | no |
+| emails | emails | array | no |
+| faxes | faxes | array | no |
+| phones | phones | array | no |
+| number | phone number | string | no |
+| phone_hours | phone hours | string | no |
+| phone_type | phone type | string | no |
+
+
+### Services
+
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| audience | audience | string | yes |
+| eligibility | eligibility | string | yes |
+| fees | fees | string | yes |
+| how_to_apply | how to apply | string | no |
+| service_areas | service areas | array | yes |
+| keywords | keywords | array | no |
+| wait | wait time | string | no |
+
