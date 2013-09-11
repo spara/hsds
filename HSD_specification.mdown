@@ -165,36 +165,30 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | location_id | string | yes | An ID that uniquely identifies a location |
 | ask_for | string | no | Name of service provider contact |
 
-### Email
-| HSD Name  | Data Type | Required | Detail
-|:----------|:----------|:---------|:---------|
-| location_id | location id | string | yes |
-| email | email | string | no |
-
-### URL
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| organization_id | organization id | string | yes |
-| url | url | string | no |
-
-### Keyword
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| service_id | service id | string | yes |
-| keyword | keyword | string | no |
+### Internet Resource
+| HSD Name  | Required | Detail |
+|:----------|:---------|:-------|
+| organization_id | string | yes | An ID that uniquely identifies a location |
+| resource | string | no | A URL or email address for contacting the organization
+| resource_type | string | no | Type of resource is either a URL in the form of http://organization.org/ or an email in the form of persont@organization.org |
 
 ### Accessibility
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| service_id | service id | string | yes |
-| accessibility | accessibility | string | no |
+| HSD Name  | Data Type | Required | Detail |
+|:----------|:----------|:---------|:-------|
+| service_id | string | yes |  An ID that uniquely identifies a service |
+| accessibility | string | no | A description of an accessibility service avaiable at the location. E.g. wheelchair ramp, sign interpreter/ |
 
+### Keyword
+| HSD Name  | Data Type | Required | Detail |
+|:----------|:----------|:---------|:-------|
+| service_id | string | yes | An ID that uniquely identifies a service |
+| keyword | keyword | string | no | A keyword that describes the service and can be used for classifying services under a taxonomy |
 
 
 ### Funding
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| organization_id | organization id | string | yes |
-| funding sources | url | string | no |
+| HSD Name  |  Data Type | Required | Detail |
+|:----------|:-----------|:---------|:-------|
+| organization_id | string | yes | An ID that uniquely identifies a organization |
+| funding_sources | string | no | A description of funding sources, e,g. county, state, private donors |
 
 # Extension
