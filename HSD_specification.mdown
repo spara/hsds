@@ -141,27 +141,23 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | postal_code | string | no | The postal code where the location resides. |
 | country | string | no | The country where the location resides |
 
+
+### Phone
+| HSD Name  | Data Type | Required | Detail | 
+|:----------|:----------|:---------|:---------|
+| location_id | string | yes | An ID that uniquely identifies a location |
+| phone_number | string | yes | The phone number follows the pattern of area code, exchange prefix, line number; e.g. 5551234567 |
+| phone_extension| string | no | Phone extension is prefixed with a lowercase "x" followed by the extension; e.g. x1111 |
+| phone_hours | string | no | Hours that the phones will be manned |
+| phone_type | string | no | Phone type values can be voice, fax, or tty. |
+
+
 ### Contact
 | HSD Name  | Descriptive Name | Data Type | Required |
 |:----------|:-----------------|:----------|:---------|
 | organization_id | organization id | string | yes |
 | contact_name | contact name | string | no |
 | contact_title | contact title | string | no |
-
-### Phone
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| location_id | location id | string | yes |
-| number | phone number | string | no |
-| phone_hours | phone hours | string | no |
-| phone_type | phone type | string | no |
-
-
-### Fax
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| location_id | location id | string | yes |
-| number | phone number | string | no |
 
 ### Email
 | HSD Name  | Descriptive Name | Data Type | Required |
