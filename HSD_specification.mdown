@@ -85,15 +85,13 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 ### Organizations 
 
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| name     | name             | string    | yes      |
-| organization_id | organization id | string | yes |
-| funding_sources  | funding sources | array | no |
-| urls | urls | array | no |
-| contacts | contacts | object | no |
-
-
+| HSD Name  | Data Type | Required | Details |
+|:----------|:----------|:----------|:---------|
+| organization_id | string | yes | Organization_id is an ID that uniquely identifies an organization|
+| organization_name | string | yes | The name of the organization |
+| funding_sources | array | no | Sources of funding for the organization |
+| urls | array | no | An organizations web pages |
+| contacts | object | no | Administrative contacts for the organization |
 
 
 ### Locations
@@ -195,6 +193,10 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | location_id | location id | string | yes |
 | ask_for | ask for | string | no |
 
-
+### fundin
+| HSD Name  | Descriptive Name | Data Type | Required |
+|:----------|:-----------------|:----------|:---------|
+| organization_id | organization id | string | yes |
+| funding sources | url | string | no |
 
 # Extension
