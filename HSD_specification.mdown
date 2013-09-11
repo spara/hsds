@@ -96,24 +96,23 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 ### Locations
 
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| organization_id | organization id | string | yes |
-| location_id | location id | string | yes |
-| name      | name | string | yes |
-| description | description | string | yes |
-| short_desc | short description | string | no |
-| street_address | street address | object | no |
-| mail_address | mail address | object | no |
-| hours | hours of operation | string | no |
-| transportation | transportation | string | no |
-| accessibility | accessibility | array | no |
-| languages | languages | array | no | 
-| ask_for | ask for | array | no |
-| contacts | contact | object | no |
-| emails | emails | array | no |
-| faxes | faxes | array | no |
-| phones | phones | array | no |
+| HSD Name  | Data Type | Required | Details |
+|:----------|:----------|:---------|:--------|
+| organization_id | string | yes | An ID that uniquely identifies an organization |
+| location_id | string | yes | An ID that uniquely identifies an location |
+| location_name      | string | yes | The name of the location |
+| description | string | yes | A verbose description of a location |
+| short_desc | string | no | A succinct description of a location |
+| street_address | object | no | The street address of a location |
+| mail_address | object | no | The mailing address of a location |
+| hours | string | no | The hours of operation of a location |
+| transportation | string | no | Availability of public transportation near a location |
+| accessibility | array | no | Acessibility options at a location |
+| languages | array | no | Languages spoken at a location |
+| ask_for | array | no | Location staff responsible for services |
+| emails | array | no | Emails for contacting individuals at a location |
+| faxes | array | no | Fax numbers for a location. |
+| phones | array | no | Phone numbers, hours of operation, and type of number (TTY capable) at a location |
 
 
 ### Services
