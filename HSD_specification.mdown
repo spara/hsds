@@ -117,17 +117,17 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 ### Services
 
-| HSD Name  | Descriptive Name | Data Type | Required |
-|:----------|:-----------------|:----------|:---------|
-| location_id | location id | string | yes |
-| service_id | service id | string | yes |
-| audience | audience | string | yes |
-| eligibility | eligibility | string | yes |
-| fees | fees | string | yes |
-| how_to_apply | how to apply | string | no |
-| service_areas | service areas | array | yes |
-| keywords | keywords | array | no |
-| wait | wait time | string | no |
+| HSD Name  | Data Type | Required | Details |
+|:----------|:----------|:----------|:---------|
+| location_id | string | yes | An ID that uniquely identifies a location |
+| service_id | string | yes | An ID that uniquely identifies a service |
+| audience | string | yes | Clients that require the service |
+| eligibility | string | yes | Requirements to receive the service |
+| fees | string | yes | Fees charged to receive the service |
+| how_to_apply | string | no | Description of how to apply to receive the service |
+| service_areas | array | yes | Areas where the service is available to clients |
+| keywords | array | no | Keywords used to tag the service. Can be used to direct taxonomies |
+| wait | string | no | Wait times associated with the service |
 
 ### Address
 | HSD Name  | Descriptive Name | Data Type | Required |
@@ -192,7 +192,7 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | location_id | location id | string | yes |
 | ask_for | ask for | string | no |
 
-### fundin
+### Funding
 | HSD Name  | Descriptive Name | Data Type | Required |
 |:----------|:-----------------|:----------|:---------|
 | organization_id | organization id | string | yes |
