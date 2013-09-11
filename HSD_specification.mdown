@@ -8,9 +8,95 @@ This specification defines a minimum set of data elements for a human services d
 
 * Field optional - The field column may be omitted from your feed. If you choose to include an optional column, each record in your feed must have a value for that column. You may include an empty string as a value for records that do not have values for the column. Some optional fields permit an empty string as a value. To enter an empty string, just omit any text between the commas for that field. Note that 0 is interpreted as "a string of value 0", and is not an empty string.
 
-# Data Models
+# Data Model
 
 The basic entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more programs and programs can have one or more locations.
+
+The data model expressed as JSON:
+
+	[
+	  {
+	    "name": "Mid-Peninsula Speech and Language Clinic",
+	    "locs": [
+	      {
+	        "name": "Mid-Peninsula Speech and Language Clinic",
+	        "contacts": [
+	          {
+    	        "name": " Donna Dagenais, MA",
+        	    "title": "Director"
+	          }
+    	    ],
+        	"description": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders. Speech and language disorders may include articulation problems, cleft palate, voice disorders, stuttering, speech retraining following stroke or neurological trauma or neurologic disease. Individuals are first seen for evaluation, after which recommendations are made regarding appropriate treatment or referral for other professional services. Suggestions can be made to help design individual education plans for children needing special services in school, individual and group treatment, tutorial assistance and family counseling..",
+        	"short_desc": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders..",
+        	"address": {
+	          "street": "445 Sherman Svenue, Suite O",
+	          "city": "Palo Alto",
+	          "state": "CA",
+	          "zip": "94306"
+	        },
+	        "mail_address": {
+	          "attention": "Mid-Pen Speech & Language Clin",
+	          "street": "445 Sherman Avenue, Suite O",
+	          "city": "Palo Alto",
+	          "state": "CA",
+	          "zip": "94306"
+	        },
+	        "ask_for": [
+	          "Kathy Kinkaid (kkinkaid@mpslc.com)"
+	        ],
+	        "hours": "By appointment",
+	        "transportation": "SAMTRANS stops within 3 blocks, CALTRAIN within 3 blocks.",
+	        "accessibility": [
+	          "restroom",
+	          "wheelchair"
+	        ],
+	        "languages": null,
+	        "emails": [
+	          "ddagenais@mpslc.com"
+	        ],
+	        "faxes": [
+	          "650 321-8122"
+	        ],
+	        "phones": [
+	          {
+	            "number": "650 321-8111",
+	            "phone_hours": "(Monday-Friday, 8-5)"
+	          }
+	        ],
+	        "urls": [
+	          "http://www.mpslc.com"
+	        ],
+	        "servs": [
+	          {
+	            "audience": "Voice disorders, stutterers, children with developmental speech and/or language disorders",
+	            "eligibility": null,
+	            "fees": "Individual speech therapy $85 per half-hour session. Group therapy $60 per session. Fees for evaluation vary. Cash, checks and credit cards accepted.",
+	            "how_to_apply": "Apply by phone.",
+	            "service_areas": [
+	              "Alameda County",
+	              "Contra Costa County",
+	              "Marin County",
+	              "San Francisco County",
+	              "San Mateo County",
+	              "Santa Clara County"
+	            ],
+	            "keywords": [
+	              "DEVELOPMENTAL DISABILITIES SERVICES",
+	              "Speech Therapy",
+	              "HANDICAP SERVICES",
+	              "Screening/Diagnosis",
+	              "Speech and Language Evaluations"
+	            ],
+	            "wait": "Varies, usually not very long.",
+	            "funding_sources": [
+	              "Fees"
+	            ]
+	          }
+	        ]
+	      }
+	    ]
+	  }
+	]
 
 
 # Data Types
