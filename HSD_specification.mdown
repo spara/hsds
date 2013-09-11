@@ -51,15 +51,13 @@ JSON has two boolean values, true and false.
 | service.csv | yes | human services provided |
 | address.csv | yes | location and mailing addresses |
 | contact.csv | no | contact persons and phone numbers |
-| phone.csv | yes | phone numbers, hours, and types |
-| fax.csv | no | fax numbers |
-| email.csv | no | email addresses |
-| urls.csv | no | web address |
+| phone.csv | yes | phone numbers, hours, and types (voice, fax, tty)|
+| internet_resource.csv | no | email addresses and urls |
 | keyword.csv | yes | key words for categorization |
 | service_area.csv | yes | area where service is available |
 | accessibility.csv | no | accessibility options available |
-| ask_for.csv | yes | person responsible for contact |
-| contacts.csv | no | organization point of contact |
+| service_contacts.csv | yes | person responsible for contact |
+| admin_contacts.csv | no | organization point of contact |
 
 ## File Requirements
 
@@ -159,15 +157,15 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | contact_name | string | no | Name of administrative contact |
 | contact_title | string | no | Title of administrative contact |
 
-### Ask_for
+### Service Contacts
 | HSD Name  | Data Type | Required | Detail
 |:----------|:----------|:---------|:---------|
 | location_id | string | yes | An ID that uniquely identifies a location |
 | ask_for | string | no | Name of service provider contact |
 
 ### Internet Resource
-| HSD Name  | Required | Detail |
-|:----------|:---------|:-------|
+| HSD Name  | Data Type |Required | Detail |
+|:----------|:----------|:--------|:-------|
 | organization_id | string | yes | An ID that uniquely identifies a location |
 | resource | string | no | A URL or email address for contacting the organization
 | resource_type | string | no | Type of resource is either a URL in the form of http://organization.org/ or an email in the form of persont@organization.org |
