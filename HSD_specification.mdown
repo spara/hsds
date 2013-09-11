@@ -12,7 +12,7 @@ This specification defines a minimum set of data elements for a human services d
 
 The basic entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more programs and programs can have one or more locations.
 
-The data model expressed as JSON:
+The data model expressed as JSON: 
 
 	[
 	  {
@@ -98,6 +98,7 @@ The data model expressed as JSON:
 	  }
 	]
 
+Note that this is an application specific way to express the data, it can be expressed to fit other schemas or application models.
 
 # Data Types
 Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null .
@@ -136,13 +137,13 @@ JSON has two boolean values, true and false.
 | location.csv | yes | locations that provide human services |
 | service.csv | yes | human services provided |
 | address.csv | yes | location and mailing addresses |
-| contact.csv | no | contact persons and phone numbers |
+| admin_contact.csv | no | contact persons and phone numbers |
 | phone.csv | yes | phone numbers, hours, and types (voice, fax, tty)|
 | internet_resource.csv | no | email addresses and urls |
 | keyword.csv | yes | key words for categorization |
 | service_area.csv | yes | area where service is available |
 | accessibility.csv | no | accessibility options available |
-| service_contacts.csv | yes | person responsible for contact |
+| service_contact.csv | yes | person responsible for contact |
 | admin_contacts.csv | no | organization point of contact |
 
 ## File Requirements
@@ -168,17 +169,17 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 
 ### Organizations 
+organization.csv
 
 | HSD Name  | Data Type | Required | Details |
 |:----------|:----------|:----------|:---------|
 | organization_id | string | yes | Organization_id is an ID that uniquely identifies an organization|
 | organization_name | string | yes | The name of the organization |
 | funding_sources | array | no | Sources of funding for the organization |
-| urls | array | no | An organizations web pages |
-| contacts | object | no | Administrative contacts for the organization |
 
 
 ### Locations
+location.csv
 
 | HSD Name  | Data Type | Required | Details |
 |:----------|:----------|:---------|:--------|
@@ -191,15 +192,10 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | mail_address | object | no | The mailing address of a location |
 | hours | string | no | The hours of operation of a location |
 | transportation | string | no | Availability of public transportation near a location |
-| accessibility | array | no | Acessibility options at a location |
-| languages | array | no | Languages spoken at a location |
-| ask_for | array | no | Location staff responsible for services |
-| emails | array | no | Emails for contacting individuals at a location |
-| faxes | array | no | Fax numbers for a location. |
-| phones | array | no | Phone numbers, hours of operation, and type of number (TTY capable) at a location |
 
 
 ### Services
+service.csv
 
 | HSD Name  | Data Type | Required | Details |
 |:----------|:----------|:----------|:---------|
@@ -209,11 +205,11 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | eligibility | string | yes | Requirements to receive the service |
 | fees | string | yes | Fees charged to receive the service |
 | how_to_apply | string | no | Description of how to apply to receive the service |
-| service_areas | array | yes | Areas where the service is available to clients |
-| keywords | array | no | Keywords used to tag the service. Can be used to direct taxonomies |
 | wait | string | no | Wait times associated with the service |
 
 ### Address
+address.csv
+
 | HSD Name  | Data Type | Required | Details |
 |:----------|:----------|:---------|:--------|
 | location_id | string | yes | An ID that uniquely identifies a location |
@@ -227,6 +223,8 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 
 ### Phone
+phone.csv
+
 | HSD Name  | Data Type | Required | Detail | 
 |:----------|:----------|:---------|:---------|
 | location_id | string | yes | An ID that uniquely identifies a location |
@@ -237,6 +235,8 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 
 
 ### Administrative Contact
+admin_contact.csv
+
 | HSD Name  | Data Type | Required | Detail |
 |:----------|:----------|:---------|:---------|
 | organization_id | string | yes | An ID that uniquely identifies a location |
@@ -244,12 +244,16 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | contact_title | string | no | Title of administrative contact |
 
 ### Service Contacts
+service_contact.csv
+
 | HSD Name  | Data Type | Required | Detail
 |:----------|:----------|:---------|:---------|
 | location_id | string | yes | An ID that uniquely identifies a location |
 | ask_for | string | no | Name of service provider contact |
 
 ### Internet Resource
+internet_resource.csv
+
 | HSD Name  | Data Type |Required | Detail |
 |:----------|:----------|:--------|:-------|
 | organization_id | string | yes | An ID that uniquely identifies a location |
@@ -257,19 +261,24 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | resource_type | string | no | Type of resource is either a URL in the form of http://organization.org/ or an email in the form of persont@organization.org |
 
 ### Accessibility
+accessibility.csv
+
 | HSD Name  | Data Type | Required | Detail |
 |:----------|:----------|:---------|:-------|
 | service_id | string | yes |  An ID that uniquely identifies a service |
 | accessibility | string | no | A description of an accessibility service avaiable at the location. E.g. wheelchair ramp, sign interpreter/ |
 
 ### Keyword
+keyword.csv
+
 | HSD Name  | Data Type | Required | Detail |
 |:----------|:----------|:---------|:-------|
 | service_id | string | yes | An ID that uniquely identifies a service |
 | keyword | keyword | string | no | A keyword that describes the service and can be used for classifying services under a taxonomy |
 
-
 ### Funding
+funding.csv
+
 | HSD Name  |  Data Type | Required | Detail |
 |:----------|:-----------|:---------|:-------|
 | organization_id | string | yes | An ID that uniquely identifies a organization |
