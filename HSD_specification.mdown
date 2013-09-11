@@ -130,8 +130,8 @@ Mapping JSON objects to a flat file format requires normalization of data. This 
 | wait | string | no | Wait times associated with the service |
 
 ### Address
-| HSD Name  | Data Type | Required |
-|:----------|:----------|:---------|
+| HSD Name  | Data Type | Required | Details |
+|:----------|:----------|:---------|:--------|
 | location_id | string | yes | An ID that uniquely identifies a location |
 | type | string | yes | Type can either be the physical address or the mailing address |
 | street_1 | string | no | Contains the street number, street prefix, street name, street postfix |
