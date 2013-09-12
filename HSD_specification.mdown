@@ -137,6 +137,8 @@ The lowest common denominator for data exchange is the comma delimited text file
 
 # Content
 
+The data model is divided in organizations, locations and services. The following tables define the minimum set of data needed for a human services data specification.
+
 ## Organization
 
 | Name | Type | Required | Detail |
@@ -173,6 +175,17 @@ The lowest common denominator for data exchange is the comma delimited text file
 
 | Name | Type | Required | Detail |
 |:-----|:-----|:---------|:-------|
+| organization_id | string | required | An ID that uniquely identifies an organization |
+| location_id | string | required | An ID that uniquely identifies a location |
+| service_id | string | required | An ID that uniquely identifies a service |
+| audience | string | optional | Clients that require the service |
+| eligibility | string | required | Requirements to receive the service |
+| fees | string | required | Fees charged to receive the service |
+| how_to_apply | string | required | Description of how to apply to receive the service |
+| wait | string | optional | Wait times associated with the service |
+| service_areas | array | Areas served |
+| funding_sources | array | Source of funds used to support the service |
+
 
 
 # Files
