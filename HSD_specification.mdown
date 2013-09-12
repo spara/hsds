@@ -129,7 +129,7 @@ The data model can be expressed as JSON. Note that this is an application specif
 
 The lowest common denominator for data exchange is the comma delimited text file or CSV. CSV are simple table structures, data types such as arrays and objects need to be decomposed into individual tables that are joined to parent tables via a foreign key. This entity relationship diagram shows how the CSV files are joined to form a single organization.
 
-!["Entity-relationship"](img/entity_relationshop.png "ER Diagram")
+!["Entity-relationship"](img/entity_relationship.png "ER Diagram")
 
 
 # Files
