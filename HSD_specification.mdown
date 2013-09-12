@@ -190,25 +190,28 @@ The data model is divided in organizations, locations and services. The followin
 
 # Files
 
+The following table list the files that are part of the Human Services Data Specification.
+
+
 | File  | Required | Defines |
 |:------|:---------:|:--------|
-| organization.csv | yes | Organization that provides human services. |
-| location.csv | yes | Locations that provide human services. |
-| service.csv | yes | Services provided at a location. |
-| address.csv | yes | location and mailing addresses |
-| admin_contact.csv | no | Organization point of contact and phone number. |
-| phone.csv | yes | Phone numbers, hours, and types (voice, fax, tty).|
-| internet_resource.csv | no | Email addresses and urls. |
-| keyword.csv | yes | Key words for categorization. |
-| service_area.csv | yes | Area where service is available. |
-| accessibility.csv | no | Accessibility options available. |
-| service_contact.csv | yes | Service point of contact. |
-| location_coordinates.csv | yes | Coordinates for locations. |
+| organization.csv | required | Organization that provides human services. |
+| location.csv | required | Locations that provide human services. |
+| service.csv | required | Services provided at a location. |
+| address.csv | required | location and mailing addresses |
+| admin_contact.csv | optional | Organization point of contact and phone number. |
+| phone.csv | required | Phone numbers, hours, and types (voice, fax, tty).|
+| internet_resource.csv | optional | Email addresses and urls. |
+| keyword.csv | required | Key words for categorization. |
+| service_area.csv | optional | Area where service is available. |
+| accessibility.csv | optional | Accessibility options available. |
+| service_contact.csv | required | Service point of contact. |
+| location_coordinates.csv | optional | Coordinates for locations. |
 
 
 ## File Requirements
 
-Defines the format and contents of files.
+This section defines the format and contents of files.
 
 * Data is saved in a comma-delimited file, string elements must be enclosed by double quotes
 * The first line of each file must contain field names. Each subsection of the Field Definitions section corresponds to one of the files and lists the field names you may use in that file.
@@ -225,7 +228,6 @@ Defines the format and contents of files.
 
 ## Field Definitions
 Mapping JSON objects to a flat file format requires normalization of data. This means breaking up objects and arrays into individual tables and adding keys to enable joining them in either a JSON object or in a relational database.
-
 
 
 ### Organizations 
@@ -356,4 +358,4 @@ location_coordinates.csv
 
 # Extension
 
-There should be a way to extend the data spec but I'm unsure on how that would work in a practical sense.
+The specification can be extended or modified with additional data elements. If the data type is simple it can be directly added to the organizations, locations and services table definitions. If the data type is complex, e.g. an array or an object, then an additional CSV file will be necessary. Foreign key should be assigned as needed with the intended purpose of the data.
