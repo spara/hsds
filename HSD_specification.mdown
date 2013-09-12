@@ -127,7 +127,7 @@ The data model can be expressed as JSON. Note that this is an application specif
 	  }
 	]
 
-The lowest common denominator for data exchange is the comma delimited text file or CSV. CSV are simple table structures, data types such as arrays and objects need to be decomposed into individual tables that are joined to parent tables via a foreign key. This entity relationship diagram shows how the CSV files are joined to form a single organization.
+The lowest common denominator for data exchange is the comma delimited text file or CSV. CSV are simple table structures. In order to represent complex data types such as arrays and objects, they need to be decomposed into individual tables that are joined to parent tables via a foreign key. The entity relationship diagram below shows how the CSV files are joined to form a single organization.
 
 !["Entity-relationship"](img/entity_relationship.png "ER Diagram")
 
@@ -140,14 +140,14 @@ The lowest common denominator for data exchange is the comma delimited text file
 | location.csv | yes | locations that provide human services |
 | service.csv | yes | human services provided |
 | address.csv | yes | location and mailing addresses |
-| admin_contact.csv | no | contact persons and phone numbers |
+| admin_contact.csv | no | organization point of contact and phone number |
 | phone.csv | yes | phone numbers, hours, and types (voice, fax, tty)|
 | internet_resource.csv | no | email addresses and urls |
 | keyword.csv | yes | key words for categorization |
 | service_area.csv | yes | area where service is available |
 | accessibility.csv | no | accessibility options available |
-| service_contact.csv | yes | person responsible for contact |
-| admin_contacts.csv | no | organization point of contact |
+| service_contact.csv | yes | service point of contact |
+
 
 ## File Requirements
 
