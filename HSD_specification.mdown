@@ -8,11 +8,40 @@ This specification defines a minimum set of data elements for a human services d
 
 * Field optional - The field column may be omitted from your feed. If you choose to include an optional column, each record in your feed must have a value for that column. You may include an empty string as a value for records that do not have values for the column. Some optional fields permit an empty string as a value. To enter an empty string, just omit any text between the commas for that field. Note that 0 is interpreted as "a string of value 0", and is not an empty string.
 
+
+# Data Types
+Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null .
+
+!["Data types"](http://json.org/value.gif "Data Types")
+
+
+A string is a sequence of zero or more characters wrapped in quotes with backslash escapement. 
+
+!["String"](http://json.org/string.gif "String")
+
+
+A number can be represented as integer, real, or floating point. JSON does not support octal or hex because it is minimal. It does not have values for NaN or Infinity because it does not. Numbers are not quoted. 
+
+!["Number"](http://json.org/number.gif "Number")
+
+
+A JSON object is an unordered collection of key/value pairs wrapped in curly braces. The keys are strings and the values are any of the JSON types. A colon separates the keys from the values, and comma separates the pairs. 
+
+!["Object"](http://json.org/object.gif "Object")
+
+
+The JSON array is an ordered collection of values separated by commas wrapped in square brackets. 
+
+!["Array"](http://json.org/array.gif "Array")
+
+
+JSON has two boolean values, true and false.
+
 # Data Model
 
 The basic entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more programs and programs can have one or more locations.
 
-The data model expressed as JSON: 
+The data model can be expressed as JSON. Note that this is an application specific way to express the data, it can be expressed to fit other schemas or application models.
 
 	[
 	  {
@@ -98,35 +127,9 @@ The data model expressed as JSON:
 	  }
 	]
 
-Note that this is an application specific way to express the data, it can be expressed to fit other schemas or application models.
+The lowest common denominator for data exchange is the comma delimited text file or CSV. CSV are simple table structures, data types such as arrays and objects need to be decomposed into individual tables that are joined to parent tables via a foreign key. This entity relationship diagram shows how the CSV files are joined to form a single organization.
 
-# Data Types
-Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null .
-
-!["Data types"](http://json.org/value.gif "Data Types")
-
-
-A string is a sequence of zero or more characters wrapped in quotes with backslash escapement. 
-
-!["String"](http://json.org/string.gif "String")
-
-
-A number can be represented as integer, real, or floating point. JSON does not support octal or hex because it is minimal. It does not have values for NaN or Infinity because it does not. Numbers are not quoted. 
-
-!["Number"](http://json.org/number.gif "Number")
-
-
-A JSON object is an unordered collection of key/value pairs wrapped in curly braces. The keys are strings and the values are any of the JSON types. A colon separates the keys from the values, and comma separates the pairs. 
-
-!["Object"](http://json.org/object.gif "Object")
-
-
-The JSON array is an ordered collection of values separated by commas wrapped in square brackets. 
-
-!["Array"](http://json.org/array.gif "Array")
-
-
-JSON has two boolean values, true and false.
+!["Entity-relationship"](./img/entity_relationshop.png "ER Diagram")
 
 
 # Files
@@ -175,7 +178,6 @@ organization.csv
 |:----------|:----------|:----------|:---------|
 | organization_id | string | yes | Organization_id is an ID that uniquely identifies an organization|
 | organization_name | string | yes | The name of the organization |
-| funding_sources | array | no | Sources of funding for the organization |
 
 
 ### Locations
@@ -188,13 +190,11 @@ location.csv
 | location_name      | string | yes | The name of the location |
 | description | string | yes | A verbose description of a location |
 | short_desc | string | no | A succinct description of a location |
-| street_address | object | no | The street address of a location |
-| mail_address | object | no | The mailing address of a location |
 | hours | string | no | The hours of operation of a location |
 | transportation | string | no | Availability of public transportation near a location |
 
 
-### Services
+### Service
 service.csv
 
 | HSD Name  | Data Type | Required | Details |
@@ -249,7 +249,7 @@ service_contact.csv
 | HSD Name  | Data Type | Required | Detail
 |:----------|:----------|:---------|:---------|
 | location_id | string | yes | An ID that uniquely identifies a location |
-| ask_for | string | no | Name of service provider contact |
+| service_poc | string | no | Name of service provider contact |
 
 ### Internet Resource
 internet_resource.csv
@@ -265,8 +265,8 @@ accessibility.csv
 
 | HSD Name  | Data Type | Required | Detail |
 |:----------|:----------|:---------|:-------|
-| service_id | string | yes |  An ID that uniquely identifies a service |
-| accessibility | string | no | A description of an accessibility service avaiable at the location. E.g. wheelchair ramp, sign interpreter/ |
+| location_id | string | yes |  An ID that uniquely identifies a service |
+| accomodation | string | no | A description of an accessibility service avaiable at the location. E.g. wheelchair ramp, sign interpreter/ |
 
 ### Keyword
 keyword.csv
@@ -282,6 +282,8 @@ funding.csv
 | HSD Name  |  Data Type | Required | Detail |
 |:----------|:-----------|:---------|:-------|
 | organization_id | string | yes | An ID that uniquely identifies a organization |
-| funding_sources | string | no | A description of funding sources, e,g. county, state, private donors |
+| source | string | no | A description of funding sources, e,g. county, state, private donors |
 
 # Extension
+
+There should be a way to extend the data spec but I'm unsure on how that would work in a practical sense.
