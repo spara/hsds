@@ -39,7 +39,7 @@ JSON has two boolean values, true and false.
 
 # Data Model
 
-The basic entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more programs and programs can have one or more locations.
+The basic entities are an organization or agency, a program or service, and a site or location. The structure is hierarchical in that an organization has programs that have locations. Note that an organization can have one or more locations and locations can have one or more programs.
 
 The data model can be expressed as JSON. Note that this is an application specific way to express the data, it can be expressed to fit other schemas or application models.
 
