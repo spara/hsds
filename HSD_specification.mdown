@@ -1,6 +1,6 @@
 # Human Services Data Specification
 
-This specification defines a minimum set of data elements for a human services data specification. The idea behind the data specification is to create data sets that can be used by multiple domains of expertise. The goal is to derive a specification robust enough to support Information and Retreival (IR) applications and flexible enough to support localized directories. The focus of this specification is content but a large portion of the specification is dedicated to format because reducing complex data structures into a commonly used format such as comma delimited files (CSV) requires decomposing them into separate files.
+This specification defines a minimum set of data elements for a human services data specification. The idea behind the data specification is to create data sets that can be used by multiple domains of expertise. The goal is to derive a specification robust enough to support Information and Retrieval (IR) applications and flexible enough to support localized directories. The focus of this specification is content but a large portion of the specification is dedicated to format because reducing complex data structures into a commonly used format such as comma delimited files (CSV) requires decomposing them into separate files.
 
 # Term Definitions
 
