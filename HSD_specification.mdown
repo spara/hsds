@@ -1,6 +1,6 @@
 # Human Services Data Specification
 
-This specification defines a minimum set of data elements for a human services data specification. The idea behind the data specification is to create data sets that can be used by multiple domains of expertise. The goal is to derive a specification robust enough to support Information and Retreival (IR) applications and flexible enough to support localized directories. The focus of this specification is content but a large portion of the specification is dedicated to format because reducing complex data structures into a commonly used format such as comma delimited files (CSV) requires decomposing them into separate files.
+This specification defines a minimum set of data elements for a human services data specification. The idea behind the data specification is to create data sets that can be used by multiple domains of expertise. The goal is to derive a specification robust enough to support Information and Retrieval (IR) applications and flexible enough to support localized directories. The focus of this specification is content but a large portion of the specification is dedicated to format because reducing complex data structures into a commonly used format such as comma delimited files (CSV) requires decomposing them into separate files.
 
 # Term Definitions
 
@@ -14,7 +14,7 @@ This specification uses snake case where compound words are joined by an undersc
 
 
 # Data Types
-Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null .
+Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, objects, arrays, booleans, and null.
 
 !["Data types"](http://json.org/value.gif "Data Types")
 
@@ -24,7 +24,7 @@ A string is a sequence of zero or more characters wrapped in quotes with backsla
 !["String"](http://json.org/string.gif "String")
 
 
-A number can be represented as integer, real, or floating point. JSON does not support octal or hex because it is minimal. It does not have values for NaN or Infinity because it does not. Numbers are not quoted. 
+A number can be represented as integer, real, or floating point. JSON does not support octal or hex because it is minimal. It does not have values for NaN or Infinity. Numbers are not quoted. 
 
 !["Number"](http://json.org/number.gif "Number")
 
@@ -55,14 +55,14 @@ The data model can be expressed as JSON. Note that this is an application specif
 	        "name": "Mid-Peninsula Speech and Language Clinic",
 	        "contacts": [
 	          {
-    	        "contact_name": " Donna Dagenais, MA",
+    	        "contact_name": "Donna Dagenais, MA",
         	    "contact_title": "Director"
 	          }
     	    ],
-        	"description": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders. Speech and language disorders may include articulation problems, cleft palate, voice disorders, stuttering, speech retraining following stroke or neurological trauma or neurologic disease. Individuals are first seen for evaluation, after which recommendations are made regarding appropriate treatment or referral for other professional services. Suggestions can be made to help design individual education plans for children needing special services in school, individual and group treatment, tutorial assistance and family counseling..",
-        	"short_desc": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders..",
+        	"description": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders. Speech and language disorders may include articulation problems, cleft palate, voice disorders, stuttering, speech retraining following stroke or neurological trauma or neurologic disease. Individuals are first seen for evaluation, after which recommendations are made regarding appropriate treatment or referral for other professional services. Suggestions can be made to help design individual education plans for children needing special services in school, individual and group treatment, tutorial assistance and family counseling.",
+        	"short_desc": "Provides evaluation, therapy and follow-up to persons of any age who have speech, language or learning disorders.",
         	"address": {
-	          "street": "445 Sherman Svenue, Suite O",
+	          "street": "445 Sherman Avenue, Suite O",
 	          "city": "Palo Alto",
 	          "state": "CA",
 	          "zip": "94306",
@@ -75,7 +75,6 @@ The data model can be expressed as JSON. Note that this is an application specif
 	          "state": "CA",
 	          "zip": "94306",
 	          "type": "mailing"
-
 	        },
 	        "service_poc": [
 	          "Kathy Kinkaid (kkinkaid@mpslc.com)"
@@ -251,8 +250,8 @@ location.csv
 | HSD Name  | Data Type | Required | Details |
 |:----------|:----------|:---------|:--------|
 | organization_id | string | required | An ID that uniquely identifies an organization |
-| location_id | string | required | An ID that uniquely identifies an location |
-| location_name | string | required | The name of the location |
+| location_id | string | required | An ID that uniquely identifies a location |
+| location_name      | string | required | The name of the location |
 | description | string | required | A verbose description of a location |
 | short_desc | string | optional | A succinct description of a location |
 | hours | string | optional | The hours of operation of a location |
@@ -334,7 +333,7 @@ accessibility.csv
 | HSD Name  | Data Type | Required | Detail |
 |:----------|:----------|:---------|:-------|
 | location_id | string | required |  An ID that uniquely identifies a service |
-| accomodation | string | required | A description of an accessibility service avaiable at the location. E.g. wheelchair ramp, sign interpreter/ |
+| accomodation | string | required | A description of an accessibility service available at the location. E.g. wheelchair ramp, sign interpreter, etc. |
 
 ### Keyword
 keyword.csv
