@@ -294,6 +294,7 @@ phone.csv
 | HSD Name  | Data Type | Required | Detail | 
 |:----------|:----------|:---------|:---------|
 | location_id | string | required | An ID that uniquely identifies a location |
+| country_code| string | optional | Country telephone code prefix based in [ITU E.123](http://www.itu.int/rec/T-REC-E.123-200102-I/en) standard.
 | phone_number | string | required | The phone number follows the pattern of area code, exchange prefix, line number; e.g. 5551234567 |
 | phone_extension| string | optional | Phone extension is prefixed with a lowercase "x" followed by the extension; e.g. x1111 |
 | phone_hours | string | optional | Hours that the phones will be ansewerd |
