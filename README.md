@@ -1,6 +1,6 @@
 # HSDS
 
-Human Services Data Specification defines content that provides the minimum set of data for Information and Retrieval (IR) applications as well as specialized service directory applications.
+Human Services Data Specification defines content that provides the minimum set of data for Information and Retrieval (I&R) applications as well as specialized service directory applications.
 
 ### A note on contributing to the specification
 
