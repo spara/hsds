@@ -188,8 +188,8 @@ The data model is divided in organizations, locations and services. The followin
 | audience | string | optional | Clients that require the service |
 | fees | string | required | Fees charged to receive the service |
 | wait | string | optional | Wait times associated with the service |
-| service_areas | optional | array | Areas served |
-| funding_sources | optional |array | Source of funds used to support the service |
+| service_areas | array | optional | Areas served |
+| funding_sources | array | optional | Source of funds used to support the service |
 
 
 
