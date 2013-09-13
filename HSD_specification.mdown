@@ -164,12 +164,12 @@ The data model is divided in organizations, locations and services. The followin
 | address | object | required | Physical address of location |
 | description | string | required | Descrption of services provided at the location  |
 | hours | string | required | Hours of operation for the location |
+| phone | array | required | Phone number for the location |
 | mail_address | object | optional | Mailing address of location |
 | service_contact | object | optional | Point of contact for service(s) provided | 
 | short_desc | string | optional | Succinct description of services provided at the location | 
 | email | string | optional Email address for location |
 | fax | array | optional | Fax number for the location |
-| phone | array | required | Phone number for the location |
 | tty | array | optional | TTY number for the location |
 | languages | array | optional | Languages spoken at the location |
 | transportation | string | optional | Public transportation alternatives near the location |
