@@ -8,6 +8,10 @@ This specification defines a minimum set of data elements for a human services d
 
 * Field optional - The field column may be omitted from your feed. If you choose to include an optional column, each record in your feed must have a value for that column. You may include an empty string as a value for records that do not have values for the column. Some optional fields permit an empty string as a value. To enter an empty string, just omit any text between the commas for that field. Note that 0 is interpreted as "a string of value 0", and is not an empty string.
 
+# Conventions
+
+This specification uses snake case where compound words are joined by an underscore. Field name are all lower case and in snake case, e.g. 'organization_id'.
+
 
 # Data Types
 Data types are borrowed from JSON (JavaScript Object Notation). The types represented in JSON are strings, numbers, booleans, object, arrays, and null .
@@ -281,7 +285,7 @@ address.csv
 | city | string | required | The city or appropriate administrative unit where the location resides |
 | state | string | required | The state or appropriate administrative unit where the location resides, If in the US, use the two letter abbreviation |
 | postal_code | string | required | The postal code where the location resides. |
-| country | string | optional | The country where the location resides |
+| country | string | optional | The country where the location resides. Use [ISO 3166](http://www.iso.org/iso/home/standards/country_codes.htm) for country designators. |
 
 
 ### Phone
